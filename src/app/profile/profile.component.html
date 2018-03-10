@@ -1,0 +1,50 @@
+<!-- NAVBAR -->
+<app-topnav></app-topnav><br><br>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <button class="new" style="background-color: #4CAF50 ; size: A3" (click)="closeModel()">close</button>
+  <!-- Modal content -->
+  <div class="modal-content" style="margin-top: 20vh">
+
+    <div class="color-list" style="height: 60vh">
+      <section class="color" *ngFor="let item of finalList" style="background-color: #424242">
+        <div id="container">
+          <img id="image" src={{item.imagePath}}>
+        </div>
+        <!--<h2 class="name">-->
+          <!--<div class="text-block">-->
+            <!--<h4>Nature</h4>-->
+            <!--<p>What a beautiful sunrise</p>-->
+          <!--</div>-->
+        <!--</h2>-->
+        <ul class="details" style="font-style: oblique">
+          <li>{{item.name}}</li>
+          <li>{{item.email}}</li>
+          <li>{{item.contact}}</li>
+        </ul>
+      </section>
+    </div>
+
+
+  </div>
+
+
+</div>
+
+<!-- MATERIAL CARDS TO DISPLAL THE BRANCHES -->
+
+<div class="row" >
+  <div class="column" *ngFor="let item of branchList">
+    <span class="tooltiptext">click to see the KORES</span>
+    <div class="card" (click)="openModel(item.id)">
+      <img src={{item.imagePath}} alt="Mike" style="width:100%">
+      <div class="container">
+        <h2>{{ item.name }}</h2>
+        <p class="title">{{ item.id }}</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+</div>

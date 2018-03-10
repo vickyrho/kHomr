@@ -1,0 +1,273 @@
+.column {
+  float: left;
+  width: 20.0%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+  display: inline;
+}
+
+.column .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.column:hover .tooltiptext {
+  visibility: visible;
+}
+
+/* Display the columns below each other instead of side by side on small screens */
+@media (max-width: 500px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+/* Add some shadows to create a card effect */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Some left and right padding inside the container */
+.container {
+  padding: 0 16px;
+}
+
+/* Clear floats */
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+* {
+  /* Ensure sane sizing of all elements */
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.color-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /*
+    On small displays we want each .color stacked.
+    Flexbox let's us determine stacking direction via
+    flex-direction: column;
+  */
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.color {
+  /*
+    Each .color is also a flex item. We do this so that we have reasonable
+    distribution of space between elements. We use flex-direction so that
+    flexbox knows which way to position each element (in this case, vertical).
+  */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+
+  /*
+    .color can grow but not shrink (we want space for first three elements).
+    10em is enough space to see name, hsl, and hex values.
+    Try shrinking vertically on a small display.
+  */
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 10em;
+  flex: 1 0 10em;
+  -webkit-box-shadow: 0 0 30px #424242;
+  box-shadow: 0 0 30px #424242;
+
+  /* Handles any clipping/overflow issues on transition */
+  overflow: hidden;
+  padding: 1em;
+  color: white;
+  -webkit-transition: -webkit-flex-basis 500ms ease-in-out;
+  transition: -webkit-flex-basis 500ms ease-in-out;
+  transition: flex-basis 500ms ease-in-out;
+  transition: flex-basis 500ms ease-in-out, -webkit-flex-basis 500ms ease-in-out, -ms-flex-preferred-size 500ms ease-in-out;
+}
+
+.color:hover {
+  /*
+    Change the flex-basis so that we know what
+    size to transition to on hover. Arbitrary,
+    based on our design/content.
+  */
+  -ms-flex-preferred-size: 20em;
+  flex-basis: 20em;
+}
+
+.color:hover .details {
+  opacity: 1;
+}
+
+.name {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.details {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  opacity: 0;
+  -webkit-transition: opacity 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out;
+  z-index: 100;
+  margin-left: 20px;
+  font-size: large;
+}
+
+.details li {
+  font-size: 1em;
+  line-height: 2em;
+}
+
+@media (min-width: 600px) {
+  .color-list {
+    /*
+      Change the direction so that each .color
+      aligns horizontally
+    */
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+
+  .color {
+    /*
+      No scrollbars on mobile
+    */
+    -ms-flex-negative: 1;
+    flex-shrink: 1;
+  }
+}
+
+.text-block {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: black;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#container {
+  height: 400px;
+  width: 400px;
+  position: relative;
+}
+#image {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#text {
+  z-index: 100;
+  position: relative;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  left: 150px;
+  top: 350px;
+}
+
+/* Fonts, OK at the end for this demo! */
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600);

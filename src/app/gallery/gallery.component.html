@@ -1,0 +1,21 @@
+<app-topnav></app-topnav>
+<body style="background-color: #1a1a1a">
+<div class="container">
+
+  <h1 class="heading" style="color:white;">ITS a Gallery !!!!<span> you can FIND pics HERE .....</span></h1>
+
+  <div class="gallery">
+
+    <!-- GALLERY ELEMENTS  -->
+
+    <div class="gallery-item" *ngFor="let item of images">
+      <img class="gallery-image" src={{item.img}} alt="person writing in a notebook beside by an iPad, laptop, printed photos, spectacles, and a cup of coffee on a saucer">
+    </div>
+
+
+
+  </div>
+
+</div>
+
+</body>
