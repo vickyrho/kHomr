@@ -34,7 +34,13 @@ export class GalleryComponent implements OnInit {
       this.mainService.getImages().subscribe(
         response => {
           this.res = response;
+
+          // IMAGE DATA FROM BACK END //
+
           this.images = this.res.data ;
+
+          // DUMMY DATA TO DISPLAY TIME LINE //
+
           this.imageList = [{id:'2007',name:'Kurukshetra7',direction:'direction-l'},{id:'2008',name:'Kurukshetra8',direction:'direction-r'},{id:'2009',name:'Kurukshetra9',direction:'direction-l'},{id:'2010',name:'Kurukshetra10',direction:'direction-r'}
           ,{id:'2011',name:'Kurukshetra11',direction:'direction-l'},{id:'2012',name:'Kurukshetra12',direction:'direction-r'},{id:'2013',name:'Kurukshetra13',direction:'direction-l'},
             {id:'2014',name:'Kurukshetra14',direction:'direction-r'},{id:'2015',name:'Kurukshetra15',direction:'direction-l'},
@@ -46,12 +52,13 @@ export class GalleryComponent implements OnInit {
       //
   }
 
+  // OPEN MODEL //
+
+
   openModel(){
     this.modal = document.getElementById('myModal');
     this.modal.style.display = "block";
     console.log('opened');
-    // The K kore list which has dummy data temperorly . Data can be added from the back end //
-
   }
 
   // CLOSES MODEL //
