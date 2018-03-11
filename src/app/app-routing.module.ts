@@ -10,8 +10,9 @@ const routes : Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'home' , component: HomeComponent},
   { path: 'kores' , component: ProfileComponent },
-  { path: 'gallery' , component: GalleryComponent}
-  ];
+  { path: 'gallery' , component: GalleryComponent},
+  { path: '**', redirectTo: 'home', pathMatch: 'full' },
+];
 
 
 @NgModule({
