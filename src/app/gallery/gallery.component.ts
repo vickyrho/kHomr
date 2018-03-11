@@ -16,9 +16,15 @@ export class GalleryComponent implements OnInit {
   images : any ;
   res: any ;
   modal:any ;
+  loading: any = false ;
+
   constructor(private mainService : MainService) { }
 
   ngOnInit() {
+    this.loading = true ;
+    setTimeout(()=>{
+      this.loading = false ;
+    },2000);
     this.assign();
     $('#myModal').click(function(){
       console.log('clicked');

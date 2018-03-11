@@ -11,6 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { TopnavComponent } from './topnav/topnav.component';
 import { MainService } from './main.service';
 import { HttpClientModule , HttpClient} from '@angular/common/http';
+import { LoadingModule } from 'ngx-loading';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { HttpClientModule , HttpClient} from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    LoadingModule
   ],
   providers: [MainService],
   bootstrap: [AppComponent]

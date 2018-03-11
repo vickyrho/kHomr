@@ -24,7 +24,7 @@ export class ProfileComponent implements OnInit {
   res:any ;
   branchList : any ;
   res1:any;
-
+  loading : any = false ;
 
   constructor(public myElement : ElementRef,
               private mainService: MainService) {
@@ -32,7 +32,11 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
-  this.assign();
+  this.assign();this.loading = true ;
+    setTimeout(()=>{
+      this.loading = false ;
+    },2000);
+
     // TO CLOSE THE MODEL BY CLICKING OUTSIDE //
     $('#myModal').click(function(){
         console.log('clicked');
