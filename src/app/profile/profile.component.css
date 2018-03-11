@@ -1,3 +1,6 @@
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,700);
+
 .column {
   float: left;
   width: 20.0%;
@@ -36,6 +39,7 @@
 /* Add some shadows to create a card effect */
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border: 1px solid white;
 }
 
 /* Some left and right padding inside the container */
@@ -60,7 +64,7 @@
   display: inline-block;
   padding: 8px;
   color: white;
-  background-color: #000;
+  background-color: #4488aa;
   text-align: center;
   cursor: pointer;
   width: 100%;

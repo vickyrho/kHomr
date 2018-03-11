@@ -19,7 +19,7 @@
             <!--<p>What a beautiful sunrise</p>-->
           <!--</div>-->
         <!--</h2>-->
-        <ul class="details" style="font-style: oblique">
+        <ul class="details" style="font-family: 'Raleway', Helvetica, Arial, sans-serif ; font-size: 20px ; font-weight: bold ;">
           <li>{{item.name}}</li>
           <li>{{item.email}}</li>
           <li>{{item.contact}}</li>
@@ -41,8 +41,7 @@
     <div class="card" (click)="openModel(item.id)">
       <img src={{item.imagePath}} alt="Mike" style="width:100%">
       <div class="container">
-        <h2>{{ item.name }}</h2>
-        <p class="title">{{ item.id }}</p>
+        <h2 style="color: white; font-family: 'Raleway', Helvetica, Arial, sans-serif">{{ item.name }}</h2>
         <p><button class="button">Contact</button></p>
       </div>
     </div>
